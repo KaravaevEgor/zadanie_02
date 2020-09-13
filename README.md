@@ -2,6 +2,7 @@
 bash
 git add .
 git commit -m "Save"
+git push
 
 ### Регистрация
 URL:  {service}/signup
