@@ -2,5 +2,5 @@
 
 $localhost = 'localhost';
 $database = 'modul_2';
-$username = 'user';
+$username = 'root';
 $password = '12345';
