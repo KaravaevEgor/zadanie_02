@@ -6,6 +6,8 @@ header("Access-Control-Allow-Headers: Origin, Authorization, Content-Type, X-Req
 
 include_once 'settings.php';
 
+$auth_user = null;
+
 try {
     $pdo = new PDO("mysql:host={$localhost};dbname={$database}", $username, $password);
 
@@ -27,15 +29,20 @@ if (isset($_GET['api'])) {
         include_once "login.php";
     }
 
-    else if (isset($_GET['photo'])) {
-
-        include_once "photo.php";
-    }
-
     else {
 
-        header('HTTP/1.0 404 Not Found');
-        exit;
+        include_once "auth_protect.php";
+
+        if (isset($_GET['photo'])) {
+
+            include_once "photo.php";
+        }
+
+        else {
+
+            header('HTTP/1.0 404 Not Found');
+            exit;
+        }
     }
 }
 
