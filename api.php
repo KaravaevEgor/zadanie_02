@@ -1,5 +1,6 @@
 <?php
 
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, Authorization, Content-Type, X-Requested-With, Accept");
@@ -35,7 +36,12 @@ if (isset($_GET['api'])) {
 
         if (isset($_GET['photo'])) {
 
-            include_once "photo.php";
+             include_once "photo.php";
+        }
+
+        else if (isset($_GET['profile'])) {
+
+              include_once "profile.php";
         }
 
         else {
@@ -47,8 +53,9 @@ if (isset($_GET['api'])) {
 }
 
 else {
-
-    header('HTTP/1.0 404 Not Found');
+    header('Content-Type: text/html; charset=utf-8');
+    header('HTTP/1.0 200 OK');
+    include_once "./app.html";
     exit;
 }
 

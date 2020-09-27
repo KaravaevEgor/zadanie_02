@@ -22,6 +22,7 @@ if (isset($_POST['first_name']) &&
     else {
 
         $prepare = $pdo->prepare("INSERT INTO 
+
                     users (first_name, surname, phone, password) 
                     values (:first_name, :surname, :phone, :password)");
 
@@ -54,3 +55,4 @@ else {
     header('HTTP/1.0 422 Unprocessable entity');
     api_response($array);
 }
+

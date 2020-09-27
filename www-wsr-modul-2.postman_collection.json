@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "88c429c4-6afd-46ed-b64c-ff0f1f994c6c",
+		"name": "www-wsr-modul-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Иван",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "Калмыков",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "89991234568",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{service}}/signup",
+					"host": [
+						"{{service}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{service}}/photo/2",
+					"host": [
+						"{{service}}"
+					],
+					"path": [
+						"photo",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "89991234568",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{service}}/login",
+					"host": [
+						"{{service}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth_protect",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{service}}",
+					"host": [
+						"{{service}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photo_add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/i7/Desktop/unnamed.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{service}}/photo",
+					"host": [
+						"{{service}}"
+					],
+					"path": [
+						"photo"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4b10676f-183d-458c-8088-6b85bb5d85d3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e3f0da3d-5e0d-4b97-8f66-0ad44927e84b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9a3af706-3adb-419f-8bff-9f100b44188e",
+			"key": "service",
+			"value": "http://localhost/api"
+		},
+		{
+			"id": "8a624325-322d-44c2-9e24-fe9f95950431",
+			"key": "token",
+			"value": "e807f1fcf82d132f9bb018ca6738a19f"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
